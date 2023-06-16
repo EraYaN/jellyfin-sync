@@ -1,0 +1,15 @@
+{
+  "name": "jellyfin-sync",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/EraYaN/jellyfin-sync.git",
+  "author": "EraYaN <git@erayan.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.6.0",
+    "tailwindcss": "^3.3.1"
+  },
+  "scripts":{
+    "generate-openapi": "npx @openapitools/openapi-generator-cli generate -i https://api.jellyfin.org/openapi/stable/jellyfin-openapi-10.8.10.json -o openapi -g rust --library reqwest --additional-properties=supportMultipleResponses=true,useSingleRequestParameter=true,preferUnsignedInt=true,packageVersion=10.8.10"
+  }
+}
